@@ -1,5 +1,8 @@
 package org.baeldung.persistence.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Collection;
 
 import javax.persistence.Entity;
@@ -10,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+@Getter
+@Setter
 @Entity
 public class Role {
 
@@ -33,40 +38,6 @@ public class Role {
     public Role(final String name) {
         super();
         this.name = name;
-    }
-
-    //
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(final Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(final String name) {
-        this.name = name;
-    }
-
-    public Collection<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(final Collection<User> users) {
-        this.users = users;
-    }
-
-    public Collection<Privilege> getPrivileges() {
-        return privileges;
-    }
-
-    public void setPrivileges(final Collection<Privilege> privileges) {
-        this.privileges = privileges;
     }
 
     @Override
