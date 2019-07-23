@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import lombok.extern.slf4j.Slf4j;
 import org.baeldung.persistence.model.Privilege;
 import org.baeldung.persistence.model.User;
 import org.baeldung.persistence.model.VerificationToken;
@@ -42,6 +43,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+@Slf4j
 @Controller
 public class RegistrationController {
     private final Logger LOGGER = LoggerFactory.getLogger(getClass());
@@ -138,6 +140,7 @@ public class RegistrationController {
         return "redirect:/updatePassword.html?lang=" + locale.getLanguage();
     }
 
+    //reset 암호
     @RequestMapping(value = "/user/savePassword", method = RequestMethod.POST)
     @ResponseBody
     public GenericResponse savePassword(final Locale locale, @Valid PasswordDto passwordDto) {
@@ -146,6 +149,7 @@ public class RegistrationController {
         return new GenericResponse(messages.getMessage("message.resetPasswordSuc", null, locale));
     }
 
+    //자기 암호 변경시 호출됨
     // change user password
     @RequestMapping(value = "/user/updatePassword", method = RequestMethod.POST)
     @ResponseBody

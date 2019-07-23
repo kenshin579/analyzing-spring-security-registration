@@ -24,7 +24,7 @@ import org.baeldung.spring.LoginNotificationConfig;
 import org.baeldung.spring.ServiceConfig;
 import org.baeldung.spring.TestDbConfig;
 import org.baeldung.spring.TestIntegrationConfig;
-import org.baeldung.validation.EmailExistsException;
+import org.baeldung.web.error.EmailExistsException;
 import org.baeldung.web.dto.UserDto;
 import org.baeldung.web.error.UserAlreadyExistException;
 import org.junit.Assert;

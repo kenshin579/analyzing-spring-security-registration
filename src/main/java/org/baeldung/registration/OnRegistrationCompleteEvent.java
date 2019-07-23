@@ -2,9 +2,11 @@ package org.baeldung.registration;
 
 import java.util.Locale;
 
+import lombok.Getter;
 import org.baeldung.persistence.model.User;
 import org.springframework.context.ApplicationEvent;
 
+@Getter
 @SuppressWarnings("serial")
 public class OnRegistrationCompleteEvent extends ApplicationEvent {
 
@@ -18,19 +20,4 @@ public class OnRegistrationCompleteEvent extends ApplicationEvent {
         this.locale = locale;
         this.appUrl = appUrl;
     }
-
-    //
-
-    public String getAppUrl() {
-        return appUrl;
-    }
-
-    public Locale getLocale() {
-        return locale;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
 }

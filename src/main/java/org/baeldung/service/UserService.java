@@ -173,10 +173,7 @@ public class UserService implements IUserService {
 
         final User user = verificationToken.getUser();
         final Calendar cal = Calendar.getInstance();
-        if ((verificationToken.getExpiryDate()
-            .getTime()
-            - cal.getTime()
-                .getTime()) <= 0) {
+        if ((verificationToken.getExpiryDate().getTime() - cal.getTime().getTime()) <= 0) {
             tokenRepository.delete(verificationToken);
             return TOKEN_EXPIRED;
         }
